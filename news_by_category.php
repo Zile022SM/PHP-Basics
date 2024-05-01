@@ -1,8 +1,41 @@
+<?php
+ 
+    $currentCategory = NULL;
 
+    if(isset($_GET['category_id']) && is_numeric($_GET['category_id']) && $_GET['category_id'] > 0){
+        $idFromRequest = $_GET['category_id'];
+
+        $idFromRequest = strip_tags($idFromRequest);
+
+        $idFromRequest = (int) $idFromRequest;
+
+        $serializedNews = file_get_contents(__DIR__ . '/data/listaVesti.txt');
+        $news = unserialize($serializedNews);
+
+        //var_dump($news);
+
+        if(count($news) > 0){
+
+            foreach($news as $value){
+                if($value['category_id'] == $idFromRequest){
+                    $currentCategory = $value['category'];
+                }
+            }
+
+        }
+    }
+
+    if(is_null($currentCategory)){
+        $pageTitle = "No news found";
+        header("HTTP/1.0 404 Not Found");
+    }else{
+        $pageTitle = $currentCategory;
+    }
+
+?>
 <!DOCTYPE html>
 <html>
     <?php
-        $pageTitle = "Naslovna";
         require_once './head.php';
     ?>
     <body>
@@ -15,28 +48,12 @@
             ?>
             <main id="content">
                 
-                <h2>Njanovije vesti sortirane po kategoriji</h2>
-
-                
-                <?php $serijalizovaneVesti = file_get_contents(__DIR__ . '/data/listaVesti.txt'); 
-                $vesti = unserialize($serijalizovaneVesti);
-
-                  function array_sort_by_column(&$arr,$col,$dir=SORT_ASC) {
-                    $sort_col = array();
-                    foreach ($arr as $key=> $row) {
-                        $sort_col[$key] = $row[$col];
-                    }
-  
-                    array_multisort($sort_col, $dir, $arr);
-                }
-
-                 array_sort_by_column($vesti, 'category');
-                 //var_dump($vesti);
-                ?>
+                <h2>Njanovije vesti sortirane po kategoriji <?php echo $pageTitle; ?></h2>
 
                 <?php 
                    if(count($vesti) > 0) {
                     foreach($vesti as $vest) {
+                        if($vest['category_id'] == $idFromRequest){
                  ?>
                  
                     <article class="news" style="display:flex;justify-content:space-between;column-gap:20px;align-items:start">
@@ -53,10 +70,14 @@
                             <p class="categories">
                                 <span><?php echo $vest['category']; ?> / <?php echo $vest['subcategory']; ?></span>
                             </p>
+                            <p class="views">
+                                <span>Views : <?php echo $vest['views']; ?></span>
+                            </p>
                         </div>
                     </article>
                 <?php
                     }
+                  }
                 } else {
                 ?>
                     <p>Nema vesti</p>

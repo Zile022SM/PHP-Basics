@@ -13,19 +13,25 @@
 
            $idFromRequest = (int) $idFromRequest;
 
-           $serializedNews = file_get_contents(__DIR__ . '/listaVesti.txt');
+           $serializedNews = file_get_contents(__DIR__ . '/data/listaVesti.txt');
            $news = unserialize($serializedNews);
 
            //var_dump($news);
+
            if(count($news) > 0){
 
             foreach($news as $key => $value){
                 if($value['id'] == $idFromRequest){
                     $singleNews = $value;
+
+                   //var_dump($news[$key]['views']);
+                  $news[$key]['views'] = $news[$key]['views'] + 1;
+                //var_dump($news[$key]['views']);
                 }
             }
-
           }
+
+          file_put_contents(__DIR__ . './data/listaVesti.txt', serialize($news));
         }
 
         if(is_null($singleNews)){
@@ -65,6 +71,10 @@
                             </p>
                             <p class="categories">
                                 <span><?php echo $singleNews['category']; ?> / <?php echo $singleNews['subcategory']; ?></span>
+                            </p>
+
+                            <p class="views">
+                                <span>Views: <?php echo $singleNews['views']; ?></span>
                             </p>
                         </div>
                     </article>
