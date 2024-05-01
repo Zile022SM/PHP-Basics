@@ -1,6 +1,7 @@
 <nav id="nav">
                 <a href="/index.php">Homepage</a>
                 <a href="/news.php">All news</a>
+                <a href="form.php">Contact Form</a>
 
                 <?php 
                  include_once './pagesContent.php';

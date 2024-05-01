@@ -18,18 +18,6 @@ $pages = array(
                     da bi 2015. osnovali zajedničku kompaniju Cubes d.o.o. sa ciljem da svojim klijentima ponudi sve usluge na jednom mestu.</p>"
     ),
     array(
-        "id" => "2",
-        "title" => "Contact",
-        "content" => "<h1>Cubes d.o.o.</h1>
-                    <p>Cubes d.o.o.<br>Bulevar Mihajla Pupina 181<br>11070 Beograd, Srbija<br><br>
-                    Mobilni: 00 381 69 172 72 74<br>Telefon: 00 381 11 319 2013<br>Email: office@cubes.rs</p>
-                    <h2>Kontakt formular</h2>
-                    <p>Mi cenimo vaše mišljenje, pitanje ili komentare. Ukoliko imate bilo kakve nedoumice u vezi naših 
-                    servisa ili potrebno vam je više informacija o našim uslugama i načinu rada, molim vas da budete slobodni 
-                    da nas kontaktirate popunjavanjem formulara ispod ili nas pozovite u radno vreme na jedan od kontakt telefona, 
-                    ili van radnog vremena nam ostavite poruku. Radujemo se uvek novoj saradnji.</p>"
-    ),
-    array(
         "id" => "3",
         "title" => "WEB Solutions",
         "content" => "<h1>Cubes E-Commerce</h1>

@@ -45,7 +45,7 @@
                         </div>
                         <div class="newsContent">
                             <h3>
-                                <a href=""><?php echo $vest['title']; ?></a>
+                                <a href="single-news.php?id=<?php echo $vest['id']; ?>"><?php echo $vest['title']; ?></a>
                             </h3>
                             <p class="description">
                                <?php echo $vest['description']; ?>

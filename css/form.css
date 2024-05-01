@@ -1,0 +1,180 @@
+form {
+    max-width: 98%;
+    background: #eee;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+}
+
+form .error {
+    color: red;
+    display: block;
+    width: 96%;
+}
+
+form .right {
+    text-align: right;
+}
+
+form fieldset {
+    border: none;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+form fieldset:last-child {
+
+    margin-bottom: 5px;
+}
+
+form fieldset > .cell-2 {
+    vertical-align: top;
+    border: none;
+    width: 48.4%;
+    min-width: 442px;
+    display: inline-block;
+}
+
+form fieldset > .cell-3 {
+    vertical-align: top;
+    border: none;
+    width: 32.2%;
+    min-width: 292px;
+    display: inline-block;
+}
+
+form fieldset > .cell-4 {
+    vertical-align: top;
+    border: none;
+    width: 24.2%;
+    min-width: 221px;
+    display: inline-block;
+}
+
+form fieldset > .cell-6 {
+    vertical-align: top;
+    border: none;
+    width: 16.1%;
+    min-width: 146px;
+    display: inline-block;
+}
+
+form legend {
+    color: #df5731;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #7094af;
+    font-weight: bold;
+
+}
+
+
+form label.normal {
+    color: #333;
+    font-weight: normal;
+}
+
+form label.inline {
+    display: inline;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="datetime"],
+form input[type="email"],
+form input[type="number"],
+form input[type="search"],
+form input[type="time"],
+form input[type="url"],
+form input[type="password"],
+form textarea,
+form select {
+    font-family: inherit;
+    background: #fff;
+    border: none;
+    font-size: 1em;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 33%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#333;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 5px;
+    border: 1px solid #7094a8;
+
+}
+form input[type="submit"]{
+    margin-top: 25px !important;
+}
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form input[type="datetime"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="search"]:focus,
+form input[type="time"]:focus,
+form input[type="url"]:focus,
+form input[type="password"]:focus,
+form textarea:focus,
+form select:focus{
+    background: #fff;
+}
+form select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+form .circle {
+    background: #df5731;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+form input[type="submit"],
+form input[type="button"],
+form button
+{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 30px 12px;
+    color: #fff;
+    margin: 0 auto;
+    background: #7094a8;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 96%;
+    max-width: 300px;
+    border: 1px solid #7094a8;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+form input[type="submit"]:hover,
+form input[type="button"]:hover,
+form button:hover
+{
+    background: #7094af;
+    border: 1px solid #7094af;
+}
